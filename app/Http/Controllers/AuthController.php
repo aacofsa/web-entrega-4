@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Dog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -53,7 +54,7 @@ class AuthController extends Controller
             ], 400);
         }
         $validated = $validator->valid();
-        $token = auth()->attempt($validated);
+        $token = Auth::attempt($validated);
         if (!$token) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }

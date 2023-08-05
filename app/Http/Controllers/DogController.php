@@ -56,9 +56,8 @@ class DogController extends Controller
     function findRemains($id){
         $dog = $this->findOne($id);
         $interactions = $dog->interactions->all();
-
         $ids = array_map(
-            fn($value) => $value->id,
+            fn($value) => $value->selected_dog,
             $interactions
         );
         array_push($ids, $id);
