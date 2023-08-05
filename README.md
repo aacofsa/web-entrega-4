@@ -1,7 +1,10 @@
 Create an .env file similar to .env.example and put your DB credentials
 
 Run:
-composer install
-php artisan jwt:secret
-php artisan migrate --seed
-php artisan serve
+<ul>
+    <li>composer install</li>
+    <li>php artisan jwt:secret</li>
+    <li>php artisan migrate --seed</li>
+    <li>php artisan serve</li>
+</ul>
+
